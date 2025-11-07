@@ -44,14 +44,12 @@ const FilterMenu = () => {
           "/";
         console.log("url for item no." + index + ": " + url);
 
-        let firstLast = "";
-        if (index === 0) firstLast = "ml-7";
-        else if (index === nameArray.length - 1) firstLast = "mr-7";
+
 
         return (
           <div
             key={index}
-            className={`flex-shrink-0 rounded-full flex items-center ${applyStyle.box}`}
+            className={`flex-shrink-0 rounded-full flex items-center cursor-pointer ${applyStyle.box}`}
             title={item.name}
             onClick={() => setSelected(index)}
           >
