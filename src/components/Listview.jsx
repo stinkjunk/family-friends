@@ -6,7 +6,7 @@ import Masonry from "react-masonry-css";
 
 //Placeholder data, indtil adgang fås til pefinder's API
 const width = "500";
-const height = "400";
+const height = "350";
 const url = "https://placecats.com/";
 // const cats = [...data].sort(() => Math.random() - 0.5); //Placeholder data blandes i tilfældig orden
 // Randomisering ikke brugt da den skabnte synkronisitetsproblemer mellem klient og server
@@ -17,7 +17,7 @@ const cats = [...data];
 const ListView = () => {
   console.log("Cats (Randomized): ", cats);
   return (
-    <Masonry
+    <Masonry //Masonry er en React-komponent som jeg har importeret for at lave et murstens-layout
       breakpointCols={{ default: 4, 1024: 3, 768: 2}}
       className="flex gap-3 my-7"
       columnClassName="flex flex-col gap-3"
