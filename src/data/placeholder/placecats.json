@@ -3,42 +3,49 @@
     "species": "Cat",
     "name": "Neo",
     "imgName": "neo_banana",
-    "description": "Neo with their banana. (Cute!)"
+    "description": "Neo with their banana. (Cute!)",
+    "age": "2 years"
   },
   {
     "species": "Cat",
     "name": "Neo",
     "imgName": "neo_2",
-    "description": "Here is Neo looking quite proud.. What a majestic creature!"
+    "description": "Here is Neo looking quite proud.. What a majestic creature!",
+    "age": "2 years"
   },
   {
     "species": "Cat",
     "name": "Bella",
     "imgName": "bella",
-    "description": "Bella looking curiously at you. What a lovely cat!"
+    "description": "Bella looking curiously at you. What a lovely cat!",
+    "age": "3 years"
   },
   {
     "species": "Cat",
     "name": "Louie",
     "imgName": "louie",
-    "description": "The playful cat Louie lies bored with his toy. Cheer up, Louie!"
+    "description": "The playful cat Louie lies bored with his toy. Cheer up, Louie!",
+    "age": "11 months"
   },
   {
     "species": "Cat",
     "name": "Millie",
     "imgName": "millie",
-    "description": "Millie the cat, look at those eyes! So captivating."
+    "description": "Millie the cat, look at those eyes! So captivating.",
+    "age": "2 years"
   },
   {
-    "species": "Cat",
+    "species": "2 Cats",
     "name": "Millie & Neo",
     "imgName": "millie_neo",
-    "description": "Millie and Neo, partners in crime. Watch meowt!"
+    "description": "Millie and Neo, partners in crime. Watch meowt!",
+    "age": "Both 2 years"
   },
   {
     "species": "Cat",
     "name": "Neo",
     "imgName": "neo",
-    "description": "Neo, majestic and wise. What a refined feline!"
+    "description": "Neo, majestic and wise. What a refined feline!",
+    "age": "2 years"
   }
 ]

@@ -22,7 +22,8 @@ const ListView = () => {
           <ListItem
             key={`${cat.name}-${index}`} // Et unikt "key" attribut er nødvendigt
             name={cat.name}
-            description={cat.description}
+            description={cat.species}
+            age={cat.age}
             url={url + cat.imgName + `/${width}/${height}/`}
             width={width}
             height={height}

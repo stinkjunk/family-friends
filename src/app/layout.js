@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         // className={`${manrope.variable} ${geistMono.variable} antialiased`}
-        className={`${manrope.variable} antialiased`}
+        className={`${manrope.variable} antialiased px-7`}
       >
         <Header />
         {children}

@@ -2,19 +2,22 @@ import Image from "next/image";
 
 const ListItem = (props) => {
   return (
-    <div>
+    <article className="rounded-[16px]  break-inside-avoid">
       <Image
         src={props.url}
         alt={props.name}
         width={props.width}
         height={props.height}
         className={
-          `relative w-full aspect-[` + props.width + "/" + props.height + `]`
+          `relative w-full aspect-[` + props.width + "/" + props.height + `] rounded-[16px]`
         }
       ></Image>
-      <h4 className="">{props.name}</h4>
+      <div className="">
+      <h4 className="text-[16px] font-bold">{props.name}</h4>
       <p className="">{props.description}</p>
-    </div>
+      <p>{props.age}</p>
+      </div>
+    </article>
   );
 };
 
