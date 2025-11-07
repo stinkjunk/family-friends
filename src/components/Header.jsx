@@ -1,11 +1,12 @@
-
+import Link from "next/link";
 
 const Header = () => {
   return (
-   <header>
-    <h1 className="font-extrabold">FamilyFriends</h1>
-    
-   </header>
+    <header>
+      <Link href="/">
+        <h1 className="font-extrabold">FamilyFriends</h1>
+      </Link>
+    </header>
   );
 };
 
