@@ -17,27 +17,25 @@ const cats = [...data];
 const ListView = () => {
   console.log("Cats (Randomized): ", cats);
   return (
-    <div>
-      <Masonry
-        breakpointCols={{ default: 4, 1024: 3, 768: 2, 480: 1 }}
-        className="flex gap-4"
-        columnClassName="flex flex-col gap-4"
-      >
-        {cats.map((cat, index) => (
-          <ListItem
-            key={`${cat.name}-${index}`} // Et unikt "key" attribut er nødvendigt
-            name={cat.name}
-            species={cat.species}
-            description={cat.description}
-            age={cat.age}
-            url={url + cat.imgName + `/${width}/${height}/`}
-            width={width}
-            height={height}
-            className="break-inside-avoid mb-4"
-          />
-        ))}
-      </Masonry>
-    </div>
+    <Masonry
+      breakpointCols={{ default: 4, 1024: 3, 768: 2}}
+      className="flex gap-3 my-7"
+      columnClassName="flex flex-col gap-3"
+    >
+      {cats.map((cat, index) => (
+        <ListItem
+          key={`${cat.name}-${index}`} // Et unikt "key" attribut er nødvendigt
+          name={cat.name}
+          species={cat.species}
+          description={cat.description}
+          age={cat.age}
+          url={url + cat.imgName + `/${width}/${height}/`}
+          width={width}
+          height={height}
+          className="break-inside-avoid mb-4"
+        />
+      ))}
+    </Masonry>
   );
 };
 

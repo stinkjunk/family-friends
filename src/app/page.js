@@ -3,10 +3,10 @@ import ListView from "@/components/Listview";
 
 export default function Home() {
   return (
-    <>
     <main>
-      <ListView />
+      <article>
+        <ListView />
+      </article>
     </main>
-    </>
   );
 }
