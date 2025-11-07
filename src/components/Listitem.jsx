@@ -25,7 +25,7 @@ const ListItem = (props) => {
           hover:[box-shadow:0_8px_24px_0_rgba(19,_21,_68,_0.12)]
           transition-box-shadow duration-200
         "
-          onClick={() => setFavorited(true)}
+          onClick={() => setFavorited((prev) => !prev)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ const ListItem = (props) => {
               {props.age}
             </p>
           </div>
-          {/* <p>{props.description}</p> */}
+          <p>{props.description}</p>
         </div>
       </Link>
     </>
