@@ -2,6 +2,7 @@
 
 import data from "@/data/placeholder/placecats.json";
 import ListItem from "./Listitem";
+import Masonry from "react-masonry-css";
 
 //Placeholder data, indtil adgang fås til pefinder's API
 const width = "500";
@@ -17,12 +18,17 @@ const ListView = () => {
   console.log("Cats (Randomized): ", cats);
   return (
     <div>
-      <section id="listView" className="gap-4 columns-2 md:columns-3 xl:columns-4">
+      <Masonry
+        breakpointCols={{ default: 4, 1024: 3, 768: 2, 480: 1 }}
+        className="flex gap-4"
+        columnClassName="flex flex-col gap-4"
+      >
         {cats.map((cat, index) => (
           <ListItem
             key={`${cat.name}-${index}`} // Et unikt "key" attribut er nødvendigt
             name={cat.name}
-            description={cat.species}
+            species={cat.species}
+            description={cat.description}
             age={cat.age}
             url={url + cat.imgName + `/${width}/${height}/`}
             width={width}
@@ -30,7 +36,7 @@ const ListView = () => {
             className="break-inside-avoid mb-4"
           />
         ))}
-      </section>
+      </Masonry>
     </div>
   );
 };

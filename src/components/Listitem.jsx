@@ -14,8 +14,9 @@ const ListItem = (props) => {
       ></Image>
       <div className="">
       <h4 className="text-[16px] font-bold">{props.name}</h4>
-      <p className="">{props.description}</p>
+      <p className="">{props.species}</p>
       <p>{props.age}</p>
+      <p>{props.description}</p>
       </div>
     </article>
   );
