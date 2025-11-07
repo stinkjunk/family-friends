@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --dark: #333;
+  --praimory: #F2968F;
+
   --headerHeight: 10vh;
 }
 
@@ -19,6 +21,19 @@
     --foreground: #ededed;
   }
 } */
+
+.notif::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 42%;
+  aspect-ratio: 1;
+  background: var(--praimory);
+  border : 2px solid var(--background);
+  border-radius: 50%;
+}
+
 
 body {
   background: var(--background);

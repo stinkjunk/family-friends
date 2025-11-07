@@ -1,4 +1,9 @@
 import Link from "next/link";
+import { CgBell } from "react-icons/cg";
+
+
+
+
 
 const Header = () => {
   return (
@@ -9,6 +14,9 @@ const Header = () => {
             FamilyFriends
           </h1>
         </Link>
+        <div className="notif relative">
+        <CgBell color="var(--dark)" size={28} className="cursor-pointer"></CgBell>
+        </div>
       </header>
       <div id="headerSpacer" className="h-[var(--headerHeight)]"></div>
     </>

@@ -23,7 +23,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Kan IKKE finde ud af hvordan jeg importerer fonts på den fancy next.js måde, så bruteforcer igennem vanilla HTML: */}
+        {/* Kan IKKE finde ud af hvordan jeg importerer fonts på den fancy,
+        optimerede next.js måde,så bruteforcer igennem vanilla HTML: */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -35,7 +36,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className={`${manrope.className} antialiased px-7`}>
+      <body className={`${manrope.className} antialiased`}>
         <Header />
         {children}
       </body>
