@@ -1,11 +1,13 @@
-import { Manrope, /* Geist_Mono */ } from "next/font/google";
+import { Manrope /* Geist_Mono */ } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
-});
+const manrope = Manrope({ subsets: ["latin"], display: "swap" });
+
+// const manrope = Manrope({
+//   variable: "--font-manrope",
+//   subsets: ["latin"],
+// });
 
 // const geistMono = Geist_Mono({
 //   variable: "--font-geist-mono",
@@ -20,10 +22,20 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        // className={`${manrope.variable} ${geistMono.variable} antialiased`}
-        className={`${manrope.variable} antialiased px-7`}
-      >
+      <head>
+        {/* Kan IKKE finde ud af hvordan jeg importerer fonts på den fancy next.js måde, så bruteforcer igennem vanilla HTML: */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className={`${manrope.className} antialiased px-7`}>
         <Header />
         {children}
       </body>

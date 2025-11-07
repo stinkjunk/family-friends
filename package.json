@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "rebuild": "npm run build && npm run start -- -p 3050"
   },
   "dependencies": {
     "next": "16.0.1",
