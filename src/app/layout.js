@@ -1,5 +1,6 @@
 import { Manrope, /* Geist_Mono */ } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
         // className={`${manrope.variable} ${geistMono.variable} antialiased`}
         className={`${manrope.variable} antialiased`}
       >
+        <Header />
         {children}
       </body>
     </html>

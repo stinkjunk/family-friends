@@ -1,0 +1,44 @@
+[
+  {
+    "species": "Cat",
+    "name": "Neo",
+    "imgName": "neo_banana",
+    "description": "Neo with their banana. (Cute!)"
+  },
+  {
+    "species": "Cat",
+    "name": "Neo",
+    "imgName": "neo_2",
+    "description": "Here is Neo looking quite proud.. What a majestic creature!"
+  },
+  {
+    "species": "Cat",
+    "name": "Bella",
+    "imgName": "bella",
+    "description": "Bella looking curiously at you. What a lovely cat!"
+  },
+  {
+    "species": "Cat",
+    "name": "Louie",
+    "imgName": "louie",
+    "description": "The playful cat Louie lies bored with his toy. Cheer up, Louie!"
+  },
+  {
+    "species": "Cat",
+    "name": "Millie",
+    "imgName": "millie",
+    "description": "Millie the cat, look at those eyes! So captivating."
+  },
+  {
+    "species": "Cat",
+    "name": "Millie & Neo",
+    "imgName": "millie_neo",
+    "description": "Millie and Neo, partners in crime. Watch meowt!"
+  },
+  {
+    "species": "Cat",
+    "name": "Neo",
+    "imgName": "neo",
+    "description": "Neo, majestic and wise. What a refined feline!"
+  }
+]
