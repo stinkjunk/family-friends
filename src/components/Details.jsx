@@ -62,7 +62,7 @@ const Details = (props) => {
                 size={28}
               ></CgChevronLeft>
             </Link>
-            <div className=" bg-[rgba(255,255,255,0.20)] backdrop-blur-[15px] rounded-[16px]  mt-auto flex h-[6cqh] min-w-[25cqw]">
+            <div className=" bg-[rgba(255,255,255,0.20)] backdrop-blur-[15px] rounded-[16px]  mt-auto flex h-15">
               <Image
                 width={50}
                 height={50}
@@ -70,7 +70,7 @@ const Details = (props) => {
                 alt={"Cats"}
                 className="h-full w-auto object-cover scale-65 rounded-[10px] "
               ></Image>
-              <p className="text-[rgba(255,255,255,0.90)] font-medium mr-auto pr-3 mt-2 ">
+              <p className="text-[rgba(255,255,255,0.90)] font-medium mr-auto pr-8 mt-2 ">
                 {props.details.species}
               </p>
             </div>
