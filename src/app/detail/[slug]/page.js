@@ -4,18 +4,18 @@ import NotFound from "@/components/Notfound";
 import Details from "@/components/Details";
 
 export async function generateStaticParams() {
-  //return slug for each .imgName in placecats.json
-  return data.map((cat) => ({
-    slug: cat.imgName,
+  //return slug for each .imgName in placeanimals.json
+  return data.map((animal) => ({
+    slug: animal.imgName,
   }));
 }
 
 export default async function Page({ params }) {
   const { slug } = await params;
 
-  const cat = data.find((cat) => cat.imgName === slug);
+  const animal = data.find((animal) => animal.imgName === slug);
 
-  if (!cat) {
+  if (!animal) {
     return (
       <NotFound missingPage={"detail/" + slug} />
     );
@@ -23,7 +23,7 @@ export default async function Page({ params }) {
 
   return (
     <Details
-      details={cat}
+      details={animal}
     />
   );
 }
