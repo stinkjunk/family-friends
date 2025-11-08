@@ -62,11 +62,18 @@ const Details = (props) => {
                 size={28}
               ></CgChevronLeft>
             </Link>
-            {/* <div className=" bg-[rgba(255,255,255,0.20)] backdrop-blur-[15px] rounded-[16px]  mt-auto">
-              <p className="text-[rgba(255,255,255,0.90)]">
+            <div className=" bg-[rgba(255,255,255,0.20)] backdrop-blur-[15px] rounded-[16px]  mt-auto flex h-[6cqh] min-w-[25cqw]">
+              <Image
+                width={50}
+                height={50}
+                src={"https://placecats.com/millie_neo/50/50/"}
+                alt={"Cats"}
+                className="h-full w-auto object-cover scale-65 rounded-[10px] "
+              ></Image>
+              <p className="text-[rgba(255,255,255,0.90)] font-medium mr-auto pr-3 mt-2 ">
                 {props.details.species}
               </p>
-            </div> */}
+            </div>
           </div>
           <FavoriteBtn
             addStyling={addStyling}
