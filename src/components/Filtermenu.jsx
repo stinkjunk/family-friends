@@ -29,11 +29,14 @@ const FilterMenu = (props) => {
   // const [selected, setSelected] = useState("All cats");
 
   return (
-    <div className="flex-shrink-0 inline-flex h-12 overflow-x-auto overflow-y-hidden scrollbar-hide gap-3 px-7 py-0.75">
+    <div className="grid grid-flow-col auto-cols-max gap-3 overflow-x-auto overflow-y-hidden scrollbar-hide py-0.75 pl-7 pr-7">
+      {" "}
       {console.log("nameArray: ", nameArray)}
       {nameArray.map((item, index) => {
         const applyStyle =
-          props.selected === item.name ? filterItemSelectedStyle : filterItemStyle;
+          props.selected === item.name
+            ? filterItemSelectedStyle
+            : filterItemStyle;
         const url =
           "https://placecats.com/" +
           item.imgName +
@@ -43,8 +46,6 @@ const FilterMenu = (props) => {
           size +
           "/";
         console.log("url for item no." + index + ": " + url);
-
-
 
         return (
           <div
@@ -61,10 +62,13 @@ const FilterMenu = (props) => {
               className="rounded-full scale-60"
               loading="eager"
             />
-            <p className={`mr-auto pr-4 font-medium ${applyStyle.text}`}>{item.name}</p>
+            <p className={`mr-auto pr-4 font-medium ${applyStyle.text}`}>
+              {item.name}
+            </p>
           </div>
         );
       })}
+      {/* <div className="w-7"></div> */}
     </div>
   );
 };

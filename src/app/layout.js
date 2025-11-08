@@ -26,6 +26,7 @@ export default function RootLayout({ children }) {
       <head>
         {/* Kan IKKE finde ud af hvordan jeg importerer fonts på den fancy,
         optimerede next.js måde,så bruteforcer igennem vanilla HTML: */}
+        
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -37,7 +38,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className={`${manrope.className} antialiased`}>
+      <body className={`${manrope.className} antialiased overflow-x-hidden`}>
         <Header />
         {children}
       </body>
