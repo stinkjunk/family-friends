@@ -61,7 +61,7 @@ const FilterMenu = (props) => {
               className="rounded-full scale-60"
               loading="eager"
             />
-            <p className={`mr-auto pr-2 font-medium ${applyStyle.text}`}>{item.name}</p>
+            <p className={`mr-auto pr-4 font-medium ${applyStyle.text}`}>{item.name}</p>
           </div>
         );
       })}
