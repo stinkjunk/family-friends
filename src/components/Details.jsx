@@ -83,7 +83,7 @@ const Details = (props) => {
           <p className={detailStyling + speciesStyling}>
             {props.details.species}
           </p>
-          <p className={detailStyling + ageStyling}>{props.details.age}</p>
+          <p className={detailStyling + ageStyling}>{props.details.age} old</p>
         </div>
         <p className="font-medium">{props.details.description}</p>
         <p className="text-xs font-medium opacity-50 mt-2">
