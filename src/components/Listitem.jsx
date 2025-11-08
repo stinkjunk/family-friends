@@ -7,19 +7,22 @@ const ListItem = (props) => {
   return (
     <>
       <div className="relative">
-        <button
+        <button 
+        //scale var før scale-70 for at følge figmaen, men
+        //en større knap er nemmere at trykke på mobil.
+        //Før var: top-3, right-0, scale-70
           className="
         cursor-pointer
           w-10
           aspect-square
           z-10
           absolute
-          top-3
-          right-0
+          top-4
+          right-1
           rounded-full
           p-2
           text-[var(--color-background)]
-          scale-70
+          scale-85
           backdrop-blur-[20px]
           bg-[rgba(150,146,146,0.25)];
           hover:[box-shadow:0_8px_24px_0_rgba(19,_21,_68,_0.12)]
