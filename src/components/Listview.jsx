@@ -42,7 +42,6 @@ const ListView = (props) => {
     filteredCats = cats.filter((cat) => cat.name === props.selected);
   }
 
-
   return (
     <Masonry //Masonry er en React-komponent som jeg har importeret for at lave et murstens-layout
       breakpointCols={{ default: 4, 1024: 3, 768: 2 }}
@@ -59,6 +58,7 @@ const ListView = (props) => {
           url={url + cat.imgName + `/${width}/${height}/`}
           width={width}
           height={height}
+          imgName={cat.imgName}
           className="break-inside-avoid mb-4"
         />
       ))}

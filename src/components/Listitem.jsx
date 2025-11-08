@@ -43,7 +43,7 @@ const ListItem = (props) => {
         </button>
       </div>
       <Link
-        href="/detail"
+        href={"/detail/" + props.imgName}
         className="
     rounded-[16px]  break-inside-avoid
     [box-shadow:0_4px_16px_0_rgba(19,_21,_68,_0.06)]

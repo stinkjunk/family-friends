@@ -5,7 +5,7 @@ import ListView from "@/components/Listview";
 import FilterMenu from "@/components/Filtermenu";
 import { useState } from "react";
 
-export default function Home() {
+export default function Home(styles) {
   const [selected, setSelected] = useState("All cats");
 
   return (
