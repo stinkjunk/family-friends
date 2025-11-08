@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import data from "@/data/placeholder/placecats.json";
-import { useState } from "react";
+// import { useState } from "react";
 //kode som returnerer et array for hvert unikt "name: value" i placeholder.json
 const size = "50";
 const nameArray = [
@@ -25,15 +25,15 @@ const filterItemSelectedStyle = {
 // med ... "spredes" arrayet ud i det ydre array:
 // const b = [0, ...a, 4]; // → [0, 1, 2, 3, 4]
 
-const FilterMenu = () => {
-  const [selected, setSelected] = useState(0);
+const FilterMenu = (props) => {
+  // const [selected, setSelected] = useState("All cats");
 
   return (
-    <div className="flex-shrink-0 inline-flex h-12 overflow-x-auto overflow-y-hidden scrollbar-hide gap-3 px-7 py-0.5">
+    <div className="flex-shrink-0 inline-flex h-12 overflow-x-auto overflow-y-hidden scrollbar-hide gap-3 px-7 py-0.75">
       {console.log("nameArray: ", nameArray)}
       {nameArray.map((item, index) => {
         const applyStyle =
-          selected === index ? filterItemSelectedStyle : filterItemStyle;
+          props.selected === item.name ? filterItemSelectedStyle : filterItemStyle;
         const url =
           "https://placecats.com/" +
           item.imgName +
@@ -51,7 +51,7 @@ const FilterMenu = () => {
             key={index}
             className={`flex-shrink-0 rounded-full flex items-center cursor-pointer ${applyStyle.box}`}
             title={item.name}
-            onClick={() => setSelected(index)}
+            onClick={() => props.onSelect(item.name)}
           >
             <Image
               src={url}

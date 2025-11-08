@@ -14,15 +14,28 @@ const url = "https://placecats.com/";
 const cats = [...data];
 //
 
-const ListView = () => {
-  console.log("Cats (Randomized): ", cats);
+const ListView = (props) => {
+  let filteredCats = [];
+  if (props.selected === "All cats") {
+    filteredCats = cats;
+  } else if (props.selected === "Millie & Neo") {
+    filteredCats = cats.filter(
+      (cat) =>
+        cat.name === "Millie" ||
+        cat.name === "Neo" ||
+        cat.name === "Millie & Neo"
+    );
+  } else {
+    filteredCats = cats.filter((cat) => cat.name === props.selected);
+  }
+
   return (
     <Masonry //Masonry er en React-komponent som jeg har importeret for at lave et murstens-layout
-      breakpointCols={{ default: 4, 1024: 3, 768: 2}}
+      breakpointCols={{ default: 4, 1024: 3, 768: 2 }}
       className="flex gap-3 my-7"
       columnClassName="flex flex-col gap-3"
     >
-      {cats.map((cat, index) => (
+      {filteredCats.map((cat, index) => (
         <ListItem
           key={`${cat.name}-${index}`} // Et unikt "key" attribut er nødvendigt
           name={cat.name}
