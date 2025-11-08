@@ -56,7 +56,7 @@ const ListItem = (props) => {
               </p>
             </div>
             <p className="ml-auto mb-auto pl-4 opacity-40 font-medium">
-              {props.age}
+              {props.age} old
             </p>
           </div>
           <p>{props.description}</p>
