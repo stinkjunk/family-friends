@@ -74,7 +74,7 @@ const Details = (props) => {
                 width={50}
                 height={50}
                 src={previewImage}
-                alt={"Cats"}
+                alt={props.details.species}
                 className="h-full w-auto object-cover scale-65 rounded-[10px] "
               ></Image>
               <p className="text-[rgba(255,255,255,0.90)] font-medium mr-auto pr-8 mt-2 ">
