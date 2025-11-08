@@ -17,7 +17,20 @@ const cats = [...data];
 const ListView = (props) => {
   let filteredCats = [];
   if (props.selected === "All cats") {
+    //sikkert virkelig uelegant...
+    //kunne måske tænkes at en bedre måde ville være at
+    //splitte "Millie & Neo" ved " & ", og så bygge derfra?
+    //desværre er mine evner begrænsede, vel det samme med min
+    //intelligens.
     filteredCats = cats;
+  } else if (props.selected === "Millie") {
+    filteredCats = cats.filter(
+      (cat) => cat.name === "Millie" || cat.name === "Millie & Neo"
+    );
+  } else if (props.selected === "Neo") {
+    filteredCats = cats.filter(
+      (cat) => cat.name === "Neo" || cat.name === "Millie & Neo"
+    );
   } else if (props.selected === "Millie & Neo") {
     filteredCats = cats.filter(
       (cat) =>
@@ -28,6 +41,7 @@ const ListView = (props) => {
   } else {
     filteredCats = cats.filter((cat) => cat.name === props.selected);
   }
+
 
   return (
     <Masonry //Masonry er en React-komponent som jeg har importeret for at lave et murstens-layout
