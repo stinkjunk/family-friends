@@ -18,6 +18,13 @@ const Details = (props) => {
   const speciesStyling = "bg-[#ACD7FF] text-[#6B8B42;] ";
   const ageStyling = "bg-[#C5E59C] text-[#6B8B42;] ";
 
+  let previewImage;
+  if (props.details.species === "2 Cats") {
+    previewImage = "https://placecats.com/millie_neo/50/50/";
+  } else {
+    previewImage = "https://placecats.com/bella/50/50/";
+  }
+
   console.log("Kat detaljer: ", props.details);
   const size = 500;
   const url =
@@ -62,11 +69,11 @@ const Details = (props) => {
                 size={28}
               ></CgChevronLeft>
             </Link>
-            <div className=" bg-[rgba(255,255,255,0.20)] backdrop-blur-[15px] rounded-[16px]  mt-auto flex h-15">
+            <div className=" bg-[rgba(255,255,255,0.20)] backdrop-blur-[15px] rounded-[16px]  mt-auto flex h-14">
               <Image
                 width={50}
                 height={50}
-                src={"https://placecats.com/millie_neo/50/50/"}
+                src={previewImage}
                 alt={"Cats"}
                 className="h-full w-auto object-cover scale-65 rounded-[10px] "
               ></Image>
