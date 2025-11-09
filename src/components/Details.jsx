@@ -39,22 +39,12 @@ const Details = (props) => {
   return (
     <section className="px-7 pt-1 h-[calc(100vh-var(--headerHeight))] flex flex-col">
       <div className="inline-grid w-fit">
-        <Image
-          src={url}
-          alt={props.details.name}
-          width={size}
-          height={size}
-          loading="eager"
-          priority={true}
-          className="rounded-[32px] col-start-1 col-end-1 row-start-1 row-end-1"
-        />
         <div
           className="
           grid-inherit 
           flex p-6 
           rounded-[32px]
           justify-self-center
-          pointer-events-none
           z-10
           col-start-1 col-end-1 row-start-1 row-end-1
           w-full
@@ -95,6 +85,15 @@ const Details = (props) => {
             favorited={favorited}
           />
         </div>
+        <Image
+          src={url}
+          alt={props.details.name}
+          width={size}
+          height={size}
+          loading="eager"
+          priority={true}
+          className="rounded-[32px] col-start-1 col-end-1 row-start-1 row-end-1"
+        />
       </div>
       <div>
         <h1 className="font-bold text-2xl mt-4 mb-3">
