@@ -68,8 +68,8 @@ const Details = (props) => {
             </Link>
             <div className=" bg-[rgba(255,255,255,0.20)] backdrop-blur-[15px] rounded-[16px]  mt-auto flex h-14">
               <Image
-                width={50}
-                height={50}
+                width={100}
+                height={100}
                 src={previewImage}
                 alt={props.details.species}
                 className="h-full w-auto object-cover scale-65 rounded-[10px] "
