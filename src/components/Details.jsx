@@ -20,9 +20,9 @@ const Details = (props) => {
 
   let previewImage;
   if (props.details.species === "2 Cats") {
-    previewImage = "https://placecats.com/millie_neo/50/50/";
+    previewImage = "https://placecats.com/millie_neo/100/100/";
   } else {
-    previewImage = "https://placecats.com/bella/50/50/";
+    previewImage = "https://placecats.com/bella/100/100/";
   }
 
   console.log("Kat detaljer: ", props.details);
