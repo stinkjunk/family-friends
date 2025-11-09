@@ -38,21 +38,28 @@ const Details = (props) => {
 
   return (
     <section className="px-7 pt-1 h-[calc(100vh-var(--headerHeight))] flex flex-col">
-      <div className="relative">
+      <div className="inline-grid w-fit">
         <Image
           src={url}
           alt={props.details.name}
           width={size}
           height={size}
-          className="rounded-[32px]"
           loading="eager"
           priority={true}
-        ></Image>
+          className="rounded-[32px] col-start-1 col-end-1 row-start-1 row-end-1"
+        />
         <div
           className="
-          absolute top-0 left-0 h-full aspect-square
-          flex p-6
+          grid-inherit 
+          flex p-6 
+          rounded-[32px]
+          justify-self-center
+          pointer-events-none
+          z-10
+          col-start-1 col-end-1 row-start-1 row-end-1
+          w-full
           "
+          style={{ gridRow: "1", gridColumn: "1" }}
         >
           <div className="flex flex-col">
             <Link
