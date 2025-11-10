@@ -8,6 +8,11 @@ const nextConfig = {
         hostname: "placecats.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "dummyjson.com",
+        pathname: "/**",
+      },
     ],
   },
 };

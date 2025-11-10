@@ -1,4 +1,8 @@
-# Family Friends
+# ~~Family Friends~~ DummyJSON browsing app
+
+> ⚠️ **OBS:** På trods af family-friends navnet på opgaven, viser appen ikke kæledyr alligevel! Dette er fordi API'en vi oprindeligt skulle bruge har lukket ned, så henter fra dummyjson.com i stedet!
+
+
 Dette er mit svar på family friends opgaven.
 
 Lavet med Next.js med tailwindcss styling og react.

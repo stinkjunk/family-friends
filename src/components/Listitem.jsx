@@ -1,10 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import FavoriteBtn from "./Favoritebtn";
-import { useState } from "react";
+// import { useState } from "react";
 
-const ListItem = (props) => {
-  const [favorited, setFavorited] = useState(false);
+const ListItem = async (props) => {
+  const response = await fetch("https://dummyjson.com/products/");
+  const products = await response.json();
+  console.log(products.products);
+  //products er konsten .products er navnet på den reelle liste fetchet fra
+  //dummyjson.com
+
+  // const [favorited, setFavorited] = useState(false);
 
   const onClick = () => {
     setFavorited((prev) => !prev);
@@ -34,7 +40,10 @@ const ListItem = (props) => {
     "
       >
         <Image
-          src={props.url}
+          // src={props.url}
+          src={
+            "https://cdn.dummyjson.com/product-images/beauty/red-nail-polish/1.webp"
+          }
           alt={props.name}
           width={props.width}
           height={props.height}

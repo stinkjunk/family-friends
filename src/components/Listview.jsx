@@ -1,8 +1,9 @@
-"use client";
+// "use client";
 
 import data from "@/data/placeholder/placecats.json";
 import ListItem from "./Listitem";
-import Masonry from "react-masonry-css";
+// import Masonry from "react-masonry-css";
+import MasonryWrapper from "./MasonryWrapper";
 
 //Placeholder data, indtil adgang fås til pefinder's API
 const width = "500";
@@ -43,7 +44,7 @@ const ListView = (props) => {
   }
 
   return (
-    <Masonry //Masonry er en React-komponent som jeg har importeret for at lave et murstens-layout
+    <MasonryWrapper //MasonryWrapper, da Masonry i sig selv har brug for "use client"
       breakpointCols={{ default: 4, 1024: 3, 768: 2 }}
       className="flex gap-3 my-7"
       columnClassName="flex flex-col gap-3"
@@ -62,7 +63,7 @@ const ListView = (props) => {
           className="break-inside-avoid mb-4"
         />
       ))}
-    </Masonry>
+    </MasonryWrapper>
   );
 };
 

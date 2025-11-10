@@ -1,23 +1,23 @@
-"use client";
+// "use client";
 
 // import Image from "next/image";
 import ListView from "@/components/Listview";
 import FilterMenu from "@/components/Filtermenu";
-import { useState } from "react";
+// import { useState } from "react";
 
 export default function Home(styles) {
-  const [selected, setSelected] = useState("All cats");
+  // const [selected, setSelected] = useState("All cats");
 
   return (
     <main>
       <article>
         <FilterMenu
-        selected={selected}
-        onSelect={(item) => setSelected(item)}
+        // selected={selected}
+        // onSelect={(item) => setSelected(item)}
         />
         <div className="px-7">
           <ListView 
-          selected={selected}
+          // selected={selected}
           />
         </div>
       </article>
