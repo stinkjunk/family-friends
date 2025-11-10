@@ -6,15 +6,15 @@ import FilterMenu from "@/components/Filtermenu";
 // import { useState } from "react";
 
 export default function Home(styles) {
-  // const [selected, setSelected] = useState("All cats");
+  
 
   return (
     <main>
       <article>
-        <FilterMenu
+        {/* <FilterMenu
         // selected={selected}
         // onSelect={(item) => setSelected(item)}
-        />
+        /> */}
         <div className="px-7">
           <ListView 
           // selected={selected}

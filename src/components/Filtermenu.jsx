@@ -1,8 +1,5 @@
 "use client";
 import Image from "next/image";
-import data from "@/data/placeholder/placecats.json";
-// import { useState } from "react";
-//kode som returnerer et array for hvert unikt "name: value" i placeholder.json
 const size = "50";
 const nameArray = [
   { name: "All cats", imgName: "millie_neo" },

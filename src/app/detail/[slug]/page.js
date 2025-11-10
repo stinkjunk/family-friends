@@ -1,29 +1,19 @@
-
-import data from "@/data/placeholder/placecats.json";
 import NotFound from "@/components/Notfound";
 import Details from "@/components/Details";
 
-export async function generateStaticParams() {
-  //return slug for each .imgName in placeanimals.json
-  return data.map((animal) => ({
-    slug: animal.imgName,
-  }));
-}
-
+// This will render on every request
 export default async function Page({ params }) {
-  const { slug } = await params;
+  const { slug } = params;
 
-  const animal = data.find((animal) => animal.imgName === slug);
+  const response = await fetch("https://dummyjson.com/products/");
+  const products = await response.json();
+  const items = products.products;
 
-  if (!animal) {
-    return (
-      <NotFound missingPage={"detail/" + slug} />
-    );
+  const item = items.find((item) => item.imgName === slug);
+
+  if (!item) {
+    return <NotFound missingPage={"detail/" + slug} />;
   }
 
-  return (
-    <Details
-      details={animal}
-    />
-  );
+  return <Details details={item} />;
 }

@@ -1,16 +1,12 @@
-"use client";
+// "use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import FavoriteBtn from "./Favoritebtn";
-import { useState } from "react";
 import { CgChevronLeft } from "react-icons/cg";
 
 const Details = (props) => {
-  const [favorited, setFavorited] = useState(false);
-  const onClick = () => {
-    setFavorited((prev) => !prev);
-  };
+
 
   const addStyling = " w-10 h-10 ml-auto ";
 
@@ -18,12 +14,7 @@ const Details = (props) => {
   const speciesStyling = "bg-[#ACD7FF] text-[#6B8B42;] ";
   const ageStyling = "bg-[#C5E59C] text-[#6B8B42;] ";
 
-  let previewImage;
-  if (props.details.species === "2 Cats") {
-    previewImage = "https://placecats.com/millie_neo/100/100/";
-  } else {
-    previewImage = "https://placecats.com/bella/100/100/";
-  }
+  let previewImage; //100x100 thumbnail
 
   console.log("Kat detaljer: ", props.details);
   const size = 500;
@@ -67,22 +58,22 @@ const Details = (props) => {
               ></CgChevronLeft>
             </Link>
             <div className=" bg-[rgba(255,255,255,0.20)] backdrop-blur-[15px] rounded-[16px]  mt-auto flex h-14">
-              <Image
+              {/* <Image
                 width={100}
                 height={100}
-                src={previewImage}
-                alt={props.details.species}
+                src={"dummy"}
+                alt={"dummy"}
                 className="h-full w-auto object-cover scale-65 rounded-[10px] "
               ></Image>
               <p className="text-[rgba(255,255,255,0.90)] font-medium mr-auto pr-8 mt-2 ">
                 {props.details.species}
-              </p>
+              </p> */}
             </div>
           </div>
           <FavoriteBtn
             addStyling={addStyling}
-            onClick={onClick}
-            favorited={favorited}
+            // onClick={}
+            // favorited={}
           />
         </div>
         <Image
