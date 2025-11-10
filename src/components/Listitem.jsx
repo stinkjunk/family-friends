@@ -4,10 +4,6 @@ import FavoriteBtn from "./Favoritebtn";
 // import { useState } from "react";
 
 const ListItem = async (props) => {
-  const onClick = () => {
-    setFavorited((prev) => !prev);
-  };
-
   const addStyling = " w-10 scale-85 z-10 absolute top-4 right-1 ";
   //scale var før scale-70 for at følge figmaen, men
   //en større knap er nemmere at trykke på mobil.
@@ -23,23 +19,21 @@ const ListItem = async (props) => {
         />
       </div>
       <Link
-        href={"/detail/" + props.imgName}
+        href={"/detail/" + props.id} //<----???
         className="
-    rounded-[16px]  break-inside-avoid
-    [box-shadow:0_4px_16px_0_rgba(19,_21,_68,_0.06)]
-    cursor-pointer hover:[box-shadow:0_8px_24px_0_rgba(19,_21,_68,_0.12)]
-    transition-all duration-200
-    "
+        rounded-[16px]  break-inside-avoid
+        [box-shadow:0_4px_16px_0_rgba(19,_21,_68,_0.06)]
+        cursor-pointer hover:[box-shadow:0_8px_24px_0_rgba(19,_21,_68,_0.12)]
+        transition-all duration-200
+        "
       >
         <Image
           // src={props.url}
-          src={
-            props.url
-          }
-          alt={props.name}
+          src={props.url} //kig på
+          alt={props.name} //kig på
           width={props.width}
           height={props.height}
-          className={
+          className={ //kig på
             `relative w-full aspect-[` +
             props.width +
             "/" +

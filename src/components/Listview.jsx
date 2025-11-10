@@ -23,6 +23,7 @@ const ListView = async (props) => {
           height={"300"} //300px
           imgName={item.imgName}
           className="break-inside-avoid mb-4"
+          id={item.id}
         />
       ))}
     </MasonryWrapper>
