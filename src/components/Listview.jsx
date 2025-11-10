@@ -15,7 +15,7 @@ const url = "https://placecats.com/";
 const cats = [...data];
 //
 
-const ListView = (props) => {
+const ListView = async (props) => {
   let filteredCats = [];
   if (props.selected === "All cats") {
     //sikkert virkelig uelegant...
