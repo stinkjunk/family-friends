@@ -2,12 +2,19 @@ import MasonryWrapper from "./MasonryWrapper";
 import ListItem from "./Listitem";
 
 const ListView = async (props) => {
-
-
-  const response = await fetch("https://dummyjson.com/products/");
+  //https://dummyjson.com/products/
+  console.log("props.selected: ", props.selected);
+  const filteredCategory =
+    props.selected === "all-categories" ? "" : props.selected;
+  console.log("filteredCategory: ", filteredCategory);
+  const url = filteredCategory
+    ? `https://dummyjson.com/products/category/${props.selected}`
+    : "https://dummyjson.com/products/";
+  console.log("url: ", url);
+  const response = await fetch(url);
   const products = await response.json();
   const items = products.products;
-  console.log(items);
+  console.log("Items (" + props.selected + "): ", items);
 
   return (
     <MasonryWrapper //MasonryWrapper, da Masonry i sig selv har brug for "use client"

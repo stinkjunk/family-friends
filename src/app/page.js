@@ -10,13 +10,13 @@ import Loading from "@/components/Loading";
 export default function Home({ searchParams }) {
   return (
     <main>
-      <Suspense
+      {/* <Suspense
         fallback={
           <section className="px-7 pt-1 h-[calc(100vh-var(--headerHeight))] flex flex-col justify-center items-center">
             <Loading size={40} />
           </section>
         }
-      >
+      > */}
         <ProductListContainer searchParams={searchParams} />
         {/* <article>
           <FilterMenu
@@ -29,7 +29,7 @@ export default function Home({ searchParams }) {
             />
           </div>
         </article> */}
-      </Suspense>
+      {/* </Suspense> */}
     </main>
   );
 }
@@ -38,16 +38,24 @@ async function ProductListContainer({ searchParams }) {
   const { category } = await searchParams;
   console.log("searchParams: ", category);
   return (
-    <article>
-      <FilterMenu
-      selected={category}
-      // onSelect={(item) => setSelected(item)}
-      />
-      <div className="px-7">
-        <ListView
-        // selected={selected}
+    <Suspense
+      fallback={
+        <section className="px-7 pt-1 h-[calc(100vh-var(--headerHeight))] flex flex-col justify-center items-center">
+          <Loading size={40} />
+        </section>
+      }
+    >
+      <article>
+        <FilterMenu
+          selected={category}
+          // onSelect={(item) => setSelected(item)}
         />
-      </div>
-    </article>
+        <div className="px-7">
+          <ListView
+          selected={category}
+          />
+        </div>
+      </article>
+    </Suspense>
   );
 }
