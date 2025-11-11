@@ -46,9 +46,9 @@ const ListItem = async (props) => {
                 {props.species}
               </p>
             </div>
-            <p className="ml-auto mb-auto pl-4 opacity-40 font-medium">
+            {/* <p className="ml-auto mb-auto pl-4 opacity-40 font-medium">
               {props.age} old
-            </p>
+            </p> */}
           </div>
           {/* <p>{props.description}</p> */}
         </div>
