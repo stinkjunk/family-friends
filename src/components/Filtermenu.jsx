@@ -1,14 +1,8 @@
+import CategoryButton from "./Categorybutton";
 import Image from "next/image";
 const size = "50";
 
-const filterItemStyle = {
-  box: "outline outline-solid outline-[#CACACD]",
-  text: "text-[#33333366]",
-};
-const filterItemSelectedStyle = {
-  box: "bg-[color:var(--praimory)]",
-  text: "text-[var(--color-background)]",
-};
+
 
 // uden ... fås et nestet array:
 // const b = [0, a, 4]; // → [0, [1,2,3], 4]
@@ -26,12 +20,10 @@ const FilterMenu = async (props) => {
       {categories.map((category, index) => {
         const formattedCategory = category
           .replaceAll("-", " ")
-          .replace(/\b\w/g, (char) => char.toUpperCase());
-        const applyStyle =
-          /* props.selected === item.name
-            ? filterItemSelectedStyle
-            : filterItemStyle */
-          filterItemStyle;
+          .replace(/\b\w/g, (char) => char.toUpperCase())
+          .replace(/\bMens\b/g, "Men's")
+          .replace(/\bWomens\b/g, "Women's");
+
         // const url =
         //   "https://placecats.com/" +
         //   item.imgName +
@@ -43,24 +35,29 @@ const FilterMenu = async (props) => {
         // console.log("url for item no." + index + ": " + url);
 
         return (
-          <div
+          // <div
+          //   key={index}
+          //   className={`flex-shrink-0 rounded-full flex items-center cursor-pointer ${applyStyle.box}`}
+          //   title={formattedCategory}
+          //   onClick={()=>{console.log(`Category "${category}" clicked.`)}}
+          // >
+          //   {/* <Image
+          //     src={url}
+          //     alt={item.name}
+          //     width={size}
+          //     height={size}
+          //     className="rounded-full scale-60"
+          //     loading="eager"
+          //   /> */}
+          //   <p className={`px-4 py-2 font-medium ${applyStyle.text}`}>
+          //     {formattedCategory}
+          //   </p>
+          // </div>
+          <CategoryButton
+            categoryName={formattedCategory}
+            rawCategory={category}
             key={index}
-            className={`flex-shrink-0 rounded-full flex items-center cursor-pointer ${applyStyle.box}`}
-            title={formattedCategory}
-            // onClick={() => props.onSelect(item.name)}
-          >
-            {/* <Image
-              src={url}
-              alt={item.name}
-              width={size}
-              height={size}
-              className="rounded-full scale-60"
-              loading="eager"
-            /> */}
-            <p className={`px-4 py-2 font-medium ${applyStyle.text}`}>
-              {formattedCategory}
-            </p>
-          </div>
+          />
         );
       })}
       {/* <div className="w-7"></div> */}
