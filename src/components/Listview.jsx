@@ -2,6 +2,8 @@ import MasonryWrapper from "./MasonryWrapper";
 import ListItem from "./Listitem";
 
 const ListView = async (props) => {
+
+
   const response = await fetch("https://dummyjson.com/products/");
   const products = await response.json();
   const items = products.products;
@@ -9,7 +11,6 @@ const ListView = async (props) => {
 
   return (
     <MasonryWrapper //MasonryWrapper, da Masonry i sig selv har brug for "use client"
-
     >
       {items.map((item, index) => (
         <ListItem

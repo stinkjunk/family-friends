@@ -1,13 +1,12 @@
 // "use client";
 
 import Image from "next/image";
+import PastelImg from "./PastelImg";
 import Link from "next/link";
 import FavoriteBtn from "./Favoritebtn";
 import { CgChevronLeft } from "react-icons/cg";
 
 const Details = (props) => {
-
-
   const addStyling = " w-10 h-10 ml-auto ";
 
   const detailStyling = "rounded-full px-5 py-1 ";
@@ -18,14 +17,14 @@ const Details = (props) => {
 
   console.log("Kat detaljer: ", props.details);
   const size = 500;
-  const url =
-    "https://placecats.com/" +
-    props.details.imgName +
-    "/" +
-    size +
-    "/" +
-    size +
-    "/";
+  // const url =
+  //   "https://placecats.com/" +
+  //   props.details.imgName +
+  //   "/" +
+  //   size +
+  //   "/" +
+  //   size +
+  //   "/";
 
   return (
     <section className="px-7 pt-1 h-[calc(100vh-var(--headerHeight))] flex flex-col">
@@ -76,25 +75,33 @@ const Details = (props) => {
             // favorited={}
           />
         </div>
-        <Image
-          src={url}
-          alt={props.details.name}
+        {/* <Image
+          src={props.details.images[0]}
+          alt={props.details.title}
           width={size}
           height={size}
           loading="eager"
           priority={true}
           className="rounded-[32px] col-start-1 col-end-1 row-start-1 row-end-1"
-        />
+        /> */}
+        <PastelImg
+          url={props.details.images[0]}
+          name={props.details.title}
+          width={size}
+          height={size}
+          id={props.details.id}
+          style={"rounded-[32px] col-start-1 col-end-1 row-start-1 row-end-1"}
+        ></PastelImg>
       </div>
       <div>
         <h1 className="font-bold text-2xl mt-4 mb-3">
-          {props.details.species} {props.details.name}
+          {/* {props.details.species} */} {props.details.title}
         </h1>
         <div className="flex gap-2 mb-3">
           <p className={detailStyling + speciesStyling}>
-            {props.details.species}
+            {/* {props.details.species} */} Sample Text
           </p>
-          <p className={detailStyling + ageStyling}>{props.details.age} old</p>
+          {/* <p className={detailStyling + ageStyling}>{props.details.age} old</p> */}
         </div>
         <p className="font-medium">{props.details.description}</p>
         <p className="text-xs font-medium opacity-50 mt-2">
@@ -105,8 +112,7 @@ const Details = (props) => {
         href=""
         className="mt-auto mb-8 font-medium py-5 text-center text-lg text-[var(--background)] bg-[var(--praimory)] rounded-full"
       >
-        <span className="font-bold">Adopt</span> {props.details.species}{" "}
-        {props.details.name}
+        <span className="font-bold">Buy now</span>
       </Link>
     </section>
   );

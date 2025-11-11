@@ -3,12 +3,35 @@
 :root {
   --background: #ffffff;
   --dark: #333;
-  --praimory: #F2968F;
-
   --headerHeight: 10vh;
+
+  /*Pastels:*/
+  --praimory: #f2968f;
+  /*   --pastel-blue: #a7c0e0;
+  --pastel-green: #b0e0b0;
+  --pastel-yellow: #f0e0b0;
+  --pastel-purple: #c9b0e0;
+  --pastel-pink: #f0b0d0;
+  --pastel-orange: #f0c8a0;
+  --pastel-mint: #a0e0d0;
+  --pastel-lavender: #e0d0f0;
+  --pastel-peach: #f0d0b0;
+  --pastel-rose: #f5c6c6;
+  --pastel-lilac: #d4c0e0;
+  --pastel-aqua: #b0e0e0;
+  --pastel-coral: #f0a7a7;
+  --pastel-cream: #f5e6d3;
+  --pastel-sage: #c0d0c0;
+  --pastel-lagoon: #a7d0e0;
+  --pastel-blush: #f0c0c0;
+  --pastel-periwinkle: #c0c0f0;
+  --pastel-butter: #f0e6a0;
+  --pastel-seafoam: #a0e0c0;
+  --pastel-dusty-rose: #e0b7b7;
+  --pastel-sky: #b0d0f0;
+  --pastel-lemon: #f0f0a0;
+  --pastel-wisteria: #d0b0e0; */
 }
-
-
 
 @theme inline {
   --color-background: var(--background);
@@ -32,10 +55,9 @@
   width: 42%;
   aspect-ratio: 1;
   background: var(--praimory);
-  border : 2px solid var(--background);
+  border: 2px solid var(--background);
   border-radius: 50%;
 }
-
 
 body {
   background: var(--background);
@@ -50,7 +72,6 @@ body {
     sans-serif
   ) !important; */
 }
-
 
 .scrollbar-hide::-webkit-scrollbar {
   width: 0;

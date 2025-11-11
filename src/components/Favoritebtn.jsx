@@ -1,5 +1,10 @@
+"use client";
+
+import { useState } from "react";
+
 const FavoriteBtn = (props) => {
-  const favorited = props.favorited;
+  const [favorited, setFavorited] = useState(false);
+
   return (
     <button
       className={`"
@@ -14,7 +19,9 @@ const FavoriteBtn = (props) => {
           hover:[box-shadow:0_8px_24px_0_rgba(19,_21,_68,_0.12)]
           transition-box-shadow duration-200
         "`}
-      onClick={props.onClick}
+      onClick={() => {
+        setFavorited(!favorited);
+      }}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

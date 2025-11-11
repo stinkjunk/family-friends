@@ -1,9 +1,11 @@
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 import FavoriteBtn from "./Favoritebtn";
+import PastelImg from "./PastelImg";
 // import { useState } from "react";
 
 const ListItem = async (props) => {
+  const awaitedProps = await props;
   const addStyling = " w-10 scale-85 z-10 absolute top-4 right-1 ";
   //scale var før scale-70 for at følge figmaen, men
   //en større knap er nemmere at trykke på mobil.
@@ -19,7 +21,7 @@ const ListItem = async (props) => {
         />
       </div>
       <Link
-        href={"/detail/" + props.id} //<----???
+        href={"/details/" + props.id} //<----???
         className="
         rounded-[16px]  break-inside-avoid
         [box-shadow:0_4px_16px_0_rgba(19,_21,_68,_0.06)]
@@ -27,21 +29,15 @@ const ListItem = async (props) => {
         transition-all duration-200
         "
       >
-        <Image
-          // src={props.url}
-          src={props.url} //kig på
-          alt={props.name} //kig på
-          width={props.width}
-          height={props.height}
-          className={ //kig på
-            `relative w-full aspect-[` +
-            props.width +
-            "/" +
-            props.height +
-            `] rounded-[16px]`
-          }
-          loading="eager"
-        ></Image>
+        <PastelImg
+          url={awaitedProps.url}
+          name={awaitedProps.name}
+          width={awaitedProps.width}
+          height={awaitedProps.height}
+          id={awaitedProps.id}
+          style={"relative w-full rounded-[16px] object-contain"}
+        />
+
         <div className="m-4">
           <div className="flex">
             <div>
@@ -54,7 +50,7 @@ const ListItem = async (props) => {
               {props.age} old
             </p>
           </div>
-          <p>{props.description}</p>
+          {/* <p>{props.description}</p> */}
         </div>
       </Link>
     </>
