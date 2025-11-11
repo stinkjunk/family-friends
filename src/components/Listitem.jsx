@@ -10,6 +10,7 @@ const ListItem = async (props) => {
   //scale var før scale-70 for at følge figmaen, men
   //en større knap er nemmere at trykke på mobil.
   //Før var: top-3, right-0, scale-70
+  let returnTo = props.returnTo ? `?returnTo=${props.returnTo}` : "";
 
   return (
     <>
@@ -21,7 +22,7 @@ const ListItem = async (props) => {
         />
       </div>
       <Link
-        href={"/details/" + props.id} //<----???
+        href={"/details/" + props.id + returnTo}
         className="
         rounded-[16px]  break-inside-avoid
         [box-shadow:0_4px_16px_0_rgba(19,_21,_68,_0.06)]

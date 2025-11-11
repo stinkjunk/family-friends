@@ -14,7 +14,8 @@ const filterItemSelectedStyle = {
 const CategoryButton = (props) => {
   const router = useRouter();
   const applyStyle =
-    props.searchParams === props.rawCategory
+    props.searchParams === props.rawCategory ||
+    (props.searchParams === undefined && props.rawCategory === "all-categories")
       ? filterItemSelectedStyle
       : filterItemStyle;
 

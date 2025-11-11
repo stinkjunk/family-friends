@@ -12,8 +12,17 @@ const Details = (props) => {
   const detailStyling = "rounded-full px-5 py-1 ";
   const speciesStyling = "bg-[#ACD7FF] text-[#6B8B42;] ";
   const ageStyling = "bg-[#C5E59C] text-[#6B8B42;] ";
+  console.log("Category: ", props.details.category);
+  const formattedCategory = props.details.category
+    .replaceAll("-", " ")
+    .replace(/\b\w/g, (char) => char.toUpperCase())
+    .replace(/\bMens\b/g, "Men's")
+    .replace(/\bWomens\b/g, "Women's");
+  console.log("formattedCategory: ", formattedCategory);
 
-  let previewImage; //100x100 thumbnail
+
+  const lastUpdated = new Date(props.details.meta.updatedAt).toLocaleDateString().replaceAll(".", "/");
+  console.log("lastUpdated: ", lastUpdated);
 
   console.log("Kat detaljer: ", props.details);
   const size = 500;
@@ -25,9 +34,8 @@ const Details = (props) => {
   //   "/" +
   //   size +
   //   "/";
-
   return (
-    <section className="px-7 pt-1 h-[calc(100vh-var(--headerHeight))] flex flex-col">
+    <section className="px-7 pt-1 min-h-[calc(100vh-var(--headerHeight))] flex flex-col">
       <div className="inline-grid w-fit">
         <div
           className="
@@ -56,18 +64,15 @@ const Details = (props) => {
                 size={28}
               ></CgChevronLeft>
             </Link>
-            <div className=" bg-[rgba(255,255,255,0.20)] backdrop-blur-[15px] rounded-[16px]  mt-auto flex h-14">
-              {/* <Image
-                width={100}
-                height={100}
-                src={"dummy"}
-                alt={"dummy"}
-                className="h-full w-auto object-cover scale-65 rounded-[10px] "
-              ></Image>
-              <p className="text-[rgba(255,255,255,0.90)] font-medium mr-auto pr-8 mt-2 ">
-                {props.details.species}
-              </p> */}
-            </div>
+            <Link
+              className=" bg-[rgba(255,255,255,0.20)] backdrop-blur-[15px] rounded-[16px]  mt-auto flex h-10"
+              href={"/?category=" + props.details.category}
+            >
+              <CgChevronLeft color="rgba(255,255,255,0.90)" className="my-auto pl-2 transform scale-[120%]" size={28}></CgChevronLeft>
+              <p className="text-[rgba(255,255,255,0.90)] font-medium px-3 mr-2 my-auto ">
+                {formattedCategory}
+              </p>
+            </Link>
           </div>
           <FavoriteBtn
             addStyling={addStyling}
@@ -75,15 +80,6 @@ const Details = (props) => {
             // favorited={}
           />
         </div>
-        {/* <Image
-          src={props.details.images[0]}
-          alt={props.details.title}
-          width={size}
-          height={size}
-          loading="eager"
-          priority={true}
-          className="rounded-[32px] col-start-1 col-end-1 row-start-1 row-end-1"
-        /> */}
         <PastelImg
           url={props.details.images[0]}
           name={props.details.title}
@@ -104,8 +100,8 @@ const Details = (props) => {
           {/* <p className={detailStyling + ageStyling}>{props.details.age} old</p> */}
         </div>
         <p className="font-medium">{props.details.description}</p>
-        <p className="text-xs font-medium opacity-50 mt-2">
-          Last updated: {props.details.updated}
+        <p className="text-xs font-medium opacity-50 mt-2 mb-10">
+          Last updated: {lastUpdated}
         </p>
       </div>
       <Link

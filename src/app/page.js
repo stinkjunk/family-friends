@@ -17,8 +17,8 @@ export default function Home({ searchParams }) {
           </section>
         }
       > */}
-        <ProductListContainer searchParams={searchParams} />
-        {/* <article>
+      <ProductListContainer searchParams={searchParams} />
+      {/* <article>
           <FilterMenu
           // selected={selected}
           // onSelect={(item) => setSelected(item)}
@@ -38,24 +38,22 @@ async function ProductListContainer({ searchParams }) {
   const { category } = await searchParams;
   console.log("searchParams: ", category);
   return (
-    <Suspense
-      fallback={
-        <section className="px-7 pt-1 h-[calc(100vh-var(--headerHeight))] flex flex-col justify-center items-center">
-          <Loading size={40} />
-        </section>
-      }
-    >
-      <article>
-        <FilterMenu
-          selected={category}
-          // onSelect={(item) => setSelected(item)}
-        />
+    <article>
+      <FilterMenu
+        selected={category}
+        // onSelect={(item) => setSelected(item)}
+      />
+      <Suspense
+        fallback={
+          <section className="px-7 pt-1 h-[calc(100vh-var(--headerHeight))] flex flex-col justify-center items-center">
+            <Loading size={40} />
+          </section>
+        }
+      >
         <div className="px-7">
-          <ListView
-          selected={category}
-          />
+          <ListView selected={category} />
         </div>
-      </article>
-    </Suspense>
+      </Suspense>
+    </article>
   );
 }

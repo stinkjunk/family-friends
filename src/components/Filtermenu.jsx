@@ -23,36 +23,7 @@ const FilterMenu = async (props) => {
           .replace(/\b\w/g, (char) => char.toUpperCase())
           .replace(/\bMens\b/g, "Men's")
           .replace(/\bWomens\b/g, "Women's");
-
-        // const url =
-        //   "https://placecats.com/" +
-        //   item.imgName +
-        //   "/" +
-        //   size +
-        //   "/" +
-        //   size +
-        //   "/";
-        // console.log("url for item no." + index + ": " + url);
-
         return (
-          // <div
-          //   key={index}
-          //   className={`flex-shrink-0 rounded-full flex items-center cursor-pointer ${applyStyle.box}`}
-          //   title={formattedCategory}
-          //   onClick={()=>{console.log(`Category "${category}" clicked.`)}}
-          // >
-          //   {/* <Image
-          //     src={url}
-          //     alt={item.name}
-          //     width={size}
-          //     height={size}
-          //     className="rounded-full scale-60"
-          //     loading="eager"
-          //   /> */}
-          //   <p className={`px-4 py-2 font-medium ${applyStyle.text}`}>
-          //     {formattedCategory}
-          //   </p>
-          // </div>
           <CategoryButton
             searchParams={props.selected}
             categoryName={formattedCategory}
@@ -61,7 +32,6 @@ const FilterMenu = async (props) => {
           />
         );
       })}
-      {/* <div className="w-7"></div> */}
     </div>
   );
 };

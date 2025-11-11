@@ -32,6 +32,7 @@ const ListView = async (props) => {
           imgName={item.imgName}
           className="break-inside-avoid mb-4"
           id={item.id}
+          returnTo={props.selected}
         />
       ))}
     </MasonryWrapper>
