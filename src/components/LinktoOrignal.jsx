@@ -20,7 +20,7 @@ const LinktoOrignal = ({ close }) => {
         <span className="text-blue-500 text-lg"> </span>
 
         <Link
-          href="https://family-friends-git-master-sjks-projects-295442e1.vercel.app/"
+          href="https://family-friends-original.vercel.app/"
           target="_blank"
           className="text-blue-500 text-lg"
         >
