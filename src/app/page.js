@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import Loading from "@/components/Loading";
 // import { useState } from "react";
 
-export default function Home(styles) {
+export default function Home({ searchParams }) {
   return (
     <main>
       <Suspense
@@ -17,7 +17,8 @@ export default function Home(styles) {
           </section>
         }
       >
-        <article>
+        <ProductListContainer searchParams={searchParams} />
+        {/* <article>
           <FilterMenu
           // selected={selected}
           // onSelect={(item) => setSelected(item)}
@@ -27,8 +28,26 @@ export default function Home(styles) {
             // selected={selected}
             />
           </div>
-        </article>
+        </article> */}
       </Suspense>
     </main>
+  );
+}
+
+async function ProductListContainer({ searchParams }) {
+  const { category } = await searchParams;
+  console.log("searchParams: ", category);
+  return (
+    <article>
+      <FilterMenu
+      selected={category}
+      // onSelect={(item) => setSelected(item)}
+      />
+      <div className="px-7">
+        <ListView
+        // selected={selected}
+        />
+      </div>
+    </article>
   );
 }

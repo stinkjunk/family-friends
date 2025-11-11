@@ -54,6 +54,7 @@ const FilterMenu = async (props) => {
           //   </p>
           // </div>
           <CategoryButton
+            searchParams={props.selected}
             categoryName={formattedCategory}
             rawCategory={category}
             key={index}
